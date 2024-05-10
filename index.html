@@ -1,28 +1,64 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/acesso.css">
+    <link rel="stylesheet" href="./css/botaoAlternancia.css">
+
 
     <title>Acesso</title>
 </head>
+
 <body>
+    <!-- <section id="recuperarSenha">
+        <h1 id="title">Acesso</h1>
+        <p id="text">Para recuperar sua senha, digite seu RA ou CPF e siga as instruções fornecidas. </p>
+        <div class="inputC">
+            <div class="box">
+                <input class="type-checkbox" id="toogle" type="checkbox" name="name" class="toggle-button">
+                <label class="estado" for="toogle" id="toggleLabel">
+                    <span class="cpf">CPF</span>
+                    <span class="ra">RA</span>
+                </label>
+                <!-- <input class="acesso" type="text" name="pass" placeholder=""> -->
+                <!-- <button id="toggleButton" class="toggle-button">CPF</button> -->
+        <!-- <input type="text" id="inputField" placeholder="CPF">
+            </div>
+        </div>
+        
+
+
+
+        <div class="botao">
+            <a href="../pag/criarNovaSenha.html">Continuar</a>
+        </div>
+
+    </section> --> -->
+
     <section id="recuperarSenha">
         <h1 id="title">Acesso</h1>
-        <p id="text">Selecione abaixo a forma que deseja receber o Token recuperação de senha:</p>
-        <div class="botao">
-            <a href="./pag/verificacao.html">SMS:</a>
-            <a href="./pag/verificacao.html">Email:</a>
+        <p id="text">Para recuperar sua senha, digite seu RA ou CPF e siga as instruções fornecidas. </p>
+        <div class="inputC">
+            <div class="box">
+                <input class="type-checkbox" id="toggle" type="checkbox" name="name" class="toggle-button">
+                <label class="estado" for="toggle" id="toggleLabel" textContent="">
+                    <span class="cpf">CPF</span>
+                    <!-- <span class="ra">RA</span> -->
+                </label>
+                
+                <input  class="acesso" type="text" id="inputField" placeholder="CPF">
+            </div>
         </div>
-        <p class="text">Seu endereço de e-mail ou seu número de telefone celular foi alterado?</p>
-        <span>Se você não usa mais o endereço de e-mail e telefone associado
-            á seu registro Academico, entre em contato com o Atendimento sumare em
-            <a href="button" style="color: var(--primary-blue);">(definir o tipo de atendimento)</a> para ajudar a restaurar o acesso á sua conta. </span>
+        <div class="botao">
+            <a href="./pag/recuperacaoSenha.html">Continuar</a>
         </div>
     </section>
-    <div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="./js/acesso.js"></script>
 </body>
+
 </html>
