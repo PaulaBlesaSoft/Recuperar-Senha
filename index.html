@@ -13,31 +13,6 @@
 </head>
 
 <body>
-    <!-- <section id="recuperarSenha">
-        <h1 id="title">Acesso</h1>
-        <p id="text">Para recuperar sua senha, digite seu RA ou CPF e siga as instruções fornecidas. </p>
-        <div class="inputC">
-            <div class="box">
-                <input class="type-checkbox" id="toogle" type="checkbox" name="name" class="toggle-button">
-                <label class="estado" for="toogle" id="toggleLabel">
-                    <span class="cpf">CPF</span>
-                    <span class="ra">RA</span>
-                </label>
-                <!-- <input class="acesso" type="text" name="pass" placeholder=""> -->
-                <!-- <button id="toggleButton" class="toggle-button">CPF</button> -->
-        <!-- <input type="text" id="inputField" placeholder="CPF">
-            </div>
-        </div>
-        
-
-
-
-        <div class="botao">
-            <a href="../pag/criarNovaSenha.html">Continuar</a>
-        </div>
-
-    </section> --> -->
-
     <section id="recuperarSenha">
         <h1 id="title">Acesso</h1>
         <p id="text">Para recuperar sua senha, digite seu RA ou CPF e siga as instruções fornecidas. </p>
@@ -46,19 +21,18 @@
                 <input class="type-checkbox" id="toggle" type="checkbox" name="name" class="toggle-button">
                 <label class="estado" for="toggle" id="toggleLabel" textContent="">
                     <span class="cpf">CPF</span>
-                    <!-- <span class="ra">RA</span> -->
                 </label>
-                
-                <input  class="acesso" type="text" id="inputField" placeholder="CPF">
+
+                <input class="acesso" type="text" id="inputField" placeholder="CPF">
             </div>
         </div>
         <div class="botao">
-            <a href="./pag/recuperacaoSenha.html">Continuar</a>
+            <a  id="teste" href="#" onclick="validarInputCPF()">Continuar</a>
         </div>
     </section>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="./js/acesso.js"></script>
+    <script src="./js/acesso.js"></script>
 </body>
 
 </html>

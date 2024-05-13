@@ -24,7 +24,7 @@ section {
 
 .botao a {
     background-color: var(--primary-blue);
-    border-radius: 10px;
+    border-radius: 20px;
     padding: 10px;
 }
 .estado {
@@ -87,6 +87,9 @@ input:invalid {
         flex-direction: column;
         gap: 20px;
     }
-
-
+    
+    .acesso{
+        width: 25vh;
+        height: 5vh;
+    }
 }

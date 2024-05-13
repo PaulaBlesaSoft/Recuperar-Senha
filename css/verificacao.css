@@ -57,6 +57,7 @@ input {
 }
 
 input:invalid {
+    background-color: red;
     border-bottom: 2px solid var(--primary-blue);
 }
 
@@ -72,7 +73,7 @@ input:invalid {
     }
 
     .botao {
-        width: 70vw;
+        width: 60vw;
         text-align: center;
         display: flex;
         flex-direction: column;
@@ -88,8 +89,8 @@ input:invalid {
     }
 
     .codigo {
-        width: 20vh;
-        height: 3vh;
+        width: 22vh;
+        height: 4vh;
     }
 
 }
