@@ -2,6 +2,12 @@ section {
     gap: 30px;
 }
 
+#text {
+    font-size: 1rem;
+    font-weight: 600;
+  
+}
+
 #recuperarSenha {
     display: flex;
     align-items: center;
@@ -26,28 +32,6 @@ section {
     background-color: var(--primary-blue);
     border-radius: 20px;
     padding: 10px;
-}
-
-.estado {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-}
-
-.estado span {
-    margin-right: 5px;
-}
-
-.estado input[type="checkbox"] {
-    display: none;
-}
-
-.estado input[type="checkbox"]+span {
-    opacity: 0.6;
-}
-
-.estado input[type="checkbox"]:checked+span {
-    opacity: 1;
 }
 
 
