@@ -1,110 +1,88 @@
 // Seleciona o botão de interruptor e o campo de entrada
 const toggleButton = document.getElementById('toggleLabel');
-const inputField = document.getElementById('inputField');
+const myInput2 = document.getElementById('myInput2');
 
 document.getElementById('toggle').addEventListener('change', function () {
     if (this.checked) {
         // Alterna para RA
         toggleButton.textContent = 'RA';
-
-        inputField.placeholder = 'RA';
-        inputField.value = ''; // Limpa o valor do campo de entrada
+        myInput2.placeholder = 'RA';
+        myInput2.value = ''; // Limpa o valor do campo de entrada
     } else {
         // Alterna para CPF
         toggleButton.textContent = 'CPF';
         toggleButton.style.backgroundColor = ""; // Limpa a cor de fundo
-        inputField.placeholder = 'CPF';
-        inputField.value = ''; // Limpa o valor do campo de entrada
+        myInput2.placeholder = 'CPF';
+        myInput2.value = ''; // Limpa o valor do campo de entrada
     }
-
-
-
-
 });
 
-// document.getElementById('cpf').addEventListener('click', function() {
+// Adiciona evento de validação ao campo de entrada
+myInput2.addEventListener('blur', function () {
+    validarForm();
+});
 
+// Adiciona evento de keyup para impor limite de 7 dígitos para RA
+myInput2.addEventListener('keyup', function () {
+    const valorToggle = document.getElementById('toggle').checked;
+    if (valorToggle) {
+     
+        if (!(/^\d+$/.test(this.value))) {
+            this.setCustomValidity("RA inválido!");
+            this.reportValidity();
+        } else {
+            this.value = this.value.slice(0, 7);
+        }
+    }
+});
 
-//     var cpf = document.getElementById('cpf').value; // Obtenha o valor do CPF do input
+function toggleInputs(inputToHideId, inputToShowId) {
+    var inputToHide = document.getElementById(inputToHideId);
+    var inputToShow = document.getElementById(inputToShowId);
 
-   
-//     cpf = cpf.replace(/[^\d]/g, ''); // Remove caracteres não numéricos
+    if (!inputToHide.classList.contains("hidden")) {
+        inputToHide.classList.add("hidden");
+        inputToShow.classList.remove("hidden");
+    } else {
+        inputToHide.classList.remove("hidden");
+        inputToShow.classList.add("hidden");
+    }
+}
 
-//     if (cpf.length !== 11 || /^(.)\1{10}$/.test(cpf)) {
-//         console.log('CPF inválido');
-//         return false; // CPF deve ter 11 dígitos e não pode ter todos os dígitos iguais
-//     }
+function validarCPF(cpf) {
+    cpf = cpf.replace(/[^\d]+/g, '');
+    if (cpf === '' || cpf.length !== 11 || /^(\d)\1{10}$/.test(cpf)) return false;
+    let add = 0;
+    for (let i = 0; i < 9; i++) add += parseInt(cpf.charAt(i)) * (10 - i);
+    let rev = 11 - (add % 11);
+    if (rev === 10 || rev === 11) rev = 0;
+    if (rev !== parseInt(cpf.charAt(9))) return false;
+    add = 0;
+    for (let i = 0; i < 10; i++) add += parseInt(cpf.charAt(i)) * (11 - i);
+    rev = 11 - (add % 11);
+    if (rev === 10 || rev === 11) rev = 0;
+    if (rev !== parseInt(cpf.charAt(10))) return false;
+    return true;
+}
 
-//     // Calcula o primeiro dígito verificador
-//     var soma = 0;
-//     for (var i = 0; i < 9; i++) {
-//         soma += parseInt(cpf.charAt(i)) * (10 - i);
-//     }
-//     var resto = 11 - (soma % 11);
-//     var digitoVerificador1 = (resto === 10 || resto === 11) ? 0 : resto;
+function validarForm() {
+    const inputToggle = document.getElementById('toggle');
+    const cpfInput = document.getElementById('myInput2');
+    const valorToggle = inputToggle.checked;
 
-//     // Calcula o segundo dígito verificador
-//     soma = 0;
-//     for (var i = 0; i < 10; i++) {
-//         soma += parseInt(cpf.charAt(i)) * (11 - i);
-//     }
-//     resto = 11 - (soma % 11);
-//     var digitoVerificador2 = (resto === 10 || resto === 11) ? 0 : resto;
-
-//     // Verifica se os dígitos verificadores calculados são iguais aos fornecidos
-//     if (parseInt(cpf.charAt(9)) !== digitoVerificador1 || parseInt(cpf.charAt(10)) !== digitoVerificador2) {
-//         console.log('CPF inválido');
-//         return false;
-//     }
-//     alert('valido')
-//     return true; // CPF válido
-// });
-
-
-
-// function validarCPF(cpf) {
-
-//     console.log('entrei');
-//     cpf = cpf.replace(/[^\d]/g, ''); // Remove caracteres não numéricos
-
-//     if (cpf.length !== 11 || /^(.)\1{10}$/.test(cpf)) {
-//         return false; // CPF deve ter 11 dígitos e não pode ter todos os dígitos iguais
-//     }
-
-//     // Calcula o primeiro dígito verificador
-//     var soma = 0;
-//     for (var i = 0; i < 9; i++) {
-//         soma += parseInt(cpf.charAt(i)) * (10 - i);
-//     }
-//     var resto = 11 - (soma % 11);
-//     var digitoVerificador1 = (resto === 10 || resto === 11) ? 0 : resto;
-
-//     // Calcula o segundo dígito verificador
-//     soma = 0;
-//     for (var i = 0; i < 10; i++) {
-//         soma += parseInt(cpf.charAt(i)) * (11 - i);
-//     }
-//     resto = 11 - (soma % 11);
-//     var digitoVerificador2 = (resto === 10 || resto === 11) ? 0 : resto;
-
-//     // Verifica se os dígitos verificadores calculados são iguais aos fornecidos
-//     if (parseInt(cpf.charAt(9)) !== digitoVerificador1 || parseInt(cpf.charAt(10)) !== digitoVerificador2) {
-//         return false;
-//     }
-//     console.log('oi')
-//     return true; // CPF válido
-// }
-
-
-
-// function validarInputCPF() {
-//     var inputCPF = document.getElementById('inputField').value;
-//     var resultado = document.getElementById('resultado');
-
-//     if (validarCPF(inputCPF)) {
-//         resultado.innerHTML = "CPF válido.";
-//         alert('valio')
-//     } else {
-//         resultado.innerHTML = "CPF inválido.";
-//     }
-// }
+    // Verifica se o campo está configurado como "RA"
+    if (!valorToggle) {
+        // Realiza a validação apenas se não estiver configurado como "RA"
+        const cpf = cpfInput.value;
+        const cpfValido = validarCPF(cpf);
+        if (cpfValido) {
+            window.location.href = "/pag/recuperacaoSenha.html";
+        } else {
+            cpfInput.setCustomValidity("CPF inválido!");
+            cpfInput.reportValidity();
+        }
+    } else {
+        // Limpa a validação personalizada se o campo estiver configurado como "RA"
+        cpfInput.setCustomValidity("");
+    }
+}

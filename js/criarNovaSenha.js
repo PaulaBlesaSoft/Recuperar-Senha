@@ -24,7 +24,7 @@ document.getElementById('eye2').addEventListener('click', function () {
     }
 });
 
-// -------------------------------------------------------------------------------
+
 
 //validacao de senha iguais (criarNovaSenha)  
 let senha = document.getElementById('senha');

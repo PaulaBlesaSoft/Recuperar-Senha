@@ -27,6 +27,7 @@ section {
     border-radius: 20px;
     padding: 10px;
 }
+
 .estado {
     display: flex;
     align-items: center;
@@ -41,11 +42,11 @@ section {
     display: none;
 }
 
-.estado input[type="checkbox"] + span {
+.estado input[type="checkbox"]+span {
     opacity: 0.6;
 }
 
-.estado input[type="checkbox"]:checked + span {
+.estado input[type="checkbox"]:checked+span {
     opacity: 1;
 }
 
@@ -66,6 +67,10 @@ input:invalid {
     border-bottom: 2px solid var(--primary-blue);
 }
 
+.inputC {
+    display: grid;
+    gap: 30px;
+}
 
 
 
@@ -87,8 +92,8 @@ input:invalid {
         flex-direction: column;
         gap: 20px;
     }
-    
-    .acesso{
+
+    .acesso {
         width: 25vh;
         height: 5vh;
     }
