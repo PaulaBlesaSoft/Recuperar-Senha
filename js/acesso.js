@@ -26,7 +26,6 @@ myInput2.addEventListener('blur', function () {
 myInput2.addEventListener('keyup', function () {
     const valorToggle = document.getElementById('toggle').checked;
     if (valorToggle) {
-     
         if (!(/^\d+$/.test(this.value))) {
             this.setCustomValidity("RA inválido!");
             this.reportValidity();
