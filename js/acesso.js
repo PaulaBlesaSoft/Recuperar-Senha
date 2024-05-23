@@ -1,6 +1,8 @@
 // Seleciona o botão de interruptor e o campo de entrada
 const toggleButton = document.getElementById('toggleLabel');
 const myInput2 = document.getElementById('myInput2');
+const btn = document.querySelector('#');
+
 
 document.getElementById('toggle').addEventListener('change', function () {
     if (this.checked) {
@@ -15,11 +17,6 @@ document.getElementById('toggle').addEventListener('change', function () {
         myInput2.placeholder = 'CPF';
         myInput2.value = ''; // Limpa o valor do campo de entrada
     }
-});
-
-// Adiciona evento de validação ao campo de entrada
-myInput2.addEventListener('blur', function () {
-    validarForm();
 });
 
 // Adiciona evento de keyup para impor limite de 7 dígitos para RA
@@ -48,6 +45,7 @@ function toggleInputs(inputToHideId, inputToShowId) {
     }
 }
 
+// Função para validar o CPF (implementação existente)
 function validarCPF(cpf) {
     cpf = cpf.replace(/[^\d]+/g, '');
     if (cpf === '' || cpf.length !== 11 || /^(\d)\1{10}$/.test(cpf)) return false;
@@ -64,24 +62,44 @@ function validarCPF(cpf) {
     return true;
 }
 
+// Função para validar o RA (7 dígitos numéricos)
+function validarRA(ra) {
+    return /^\d{7}$/.test(ra);
+}
+
 function validarForm() {
     const inputToggle = document.getElementById('toggle');
     const cpfInput = document.getElementById('myInput2');
     const valorToggle = inputToggle.checked;
 
     // Verifica se o campo está configurado como "RA"
-    if (!valorToggle) {
-        // Realiza a validação apenas se não estiver configurado como "RA"
+    if (valorToggle) {
+        // Realiza a validação do RA
+        const ra = cpfInput.value;
+        const raValido = validarRA(ra);
+        if (raValido) {
+            // Armazena o RA no localStorage
+            localStorage.setItem('value', 'RA');
+            localStorage.setItem('ra', ra);
+            // Redireciona para a página de recuperação de senha ou outra página
+            window.location.href = "/pag/recuperacaoSenha.html";
+        } else {
+            cpfInput.setCustomValidity("RA inválido");
+            cpfInput.reportValidity();
+        }
+    } else {
+        // Realiza a validação do CPF
         const cpf = cpfInput.value;
         const cpfValido = validarCPF(cpf);
         if (cpfValido) {
+            // Armazena o CPF no localStorage
+            localStorage.setItem('value', 'CPF');
+            localStorage.setItem('cpf', cpf);
+            // Redireciona para a página de recuperação de senha
             window.location.href = "/pag/recuperacaoSenha.html";
         } else {
             cpfInput.setCustomValidity("CPF inválido!");
             cpfInput.reportValidity();
         }
-    } else {
-        // Limpa a validação personalizada se o campo estiver configurado como "RA"
-        cpfInput.setCustomValidity("");
     }
 }

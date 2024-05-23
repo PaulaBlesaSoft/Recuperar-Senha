@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="../css/recuperacaoSenha.css">
     <link rel="stylesheet" href="../css/botao.css">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+    <script src="../js/recuperacaoSenha.js" defer type="module"></script>
+    <script src="../js/main.js" defer type="module"></script>
 
     <title>Recuperação de Senha</title>
 </head>
@@ -16,12 +18,17 @@
     <section id="recuperarSenha">
         <h1 id="title">Recuperação de Senha</h1>
         <p id="text">Selecione abaixo a forma que deseja receber o Token recuperação de senha:</p>
-        <div class="botao">
-            <a href="./verificacao.html">SMS:</a>
+
+        <div class="cards" id="cardsJSON">
+            <!-- <div class="botao">
+                <a href="./verificacao.html">SMS:</a>
+            </div>
+            <div class="botao">
+                <a href="./verificacao.html">Email:</a>
+            </div> -->
         </div>
-        <div class="botao">
-            <a href="./verificacao.html">Email:</a>
-        </div>
+
+
         <span>Se você não usa mais o endereço de e-mail e telefone associado
             á seu registro Academico, entre em contato com o Atendimento sumare em
             <a href="button" style="color: var(--primary-blue);">(definir o tipo de atendimento)</a> para ajudar a
