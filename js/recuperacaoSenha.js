@@ -1,6 +1,6 @@
 'use strict'
 
-import { getAlunoCpf } from "./main.js"
+import { getAlunoCpf, postEmail } from "./main.js"
 import { getAlunoRa} from "./main.js"
 import { postSms } from "./main.js";
 
@@ -15,17 +15,22 @@ const criarCard =   (aluno) => {
     card.classList.add('botao');
 
     const a = document.createElement('a')
-    a.href = '../pag/verificacao.html';
+   // a.href = '../pag/verificacao.html';
     a.text = `${aluno[1]} ${aluno[0]}`
-    if(aluno[1] == `SMS` ){
-        a.addEventListener(`click`, async () =>{
-            await postSms(aluno[0])
-            
-        })
 
-    }else{
-       
-    }
+    console.log('teset');
+
+    card.addEventListener(`click`, async () =>{
+        if(aluno[1].toUpperCase() == 'SMS'){
+           let teste =  await postSms(aluno[0])
+
+           console.log(teste);
+        }else{
+            let teste =  await postEmail(aluno[0])
+
+           console.log(teste);
+        }
+    })
 
     card.append(a);
 
