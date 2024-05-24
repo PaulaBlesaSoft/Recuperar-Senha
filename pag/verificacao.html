@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/verificacao.css">
     <link rel="stylesheet" href="../css/botao.css">
-
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+
+    <script type="module" src="../js/validacao.js" defer></script>
 
     <title>Verificação necessária</title>
 </head>
@@ -22,15 +23,18 @@
         </p>
         <div class="inputC">
             <span>Inserir o código</span>
-            <input class="codigo" type="text" name="pass" placeholder="código" >
+            <input id="token" class="codigo" type="text" name="pass" placeholder="código" >
         </div>
-        <div class="botao">
-            <a href="../pag/criarNovaSenha.html">Continuar</a>
+        <div class="botao" id= "verific">
+            <a  id="verificaSenha" >Continuar</a>
         </div>
         <a href="./recuperacaoSenha.html" class="text">Selecionar outra forma de envio</a>
         </div>
     </section>
     <div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 
 </body>

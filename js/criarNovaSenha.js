@@ -24,8 +24,6 @@ document.getElementById('eye2').addEventListener('click', function () {
     }
 });
 
-
-
 //validacao de senha iguais (criarNovaSenha)  
 let senha = document.getElementById('senha');
 let senhaC = document.getElementById('senhaC');
@@ -45,3 +43,32 @@ senhaC.addEventListener('input', validarSenha);
 
 
 
+$("#btnCriaSenha").click(function(){
+
+  var senha = $("#senhaC").val();
+  var aluno = localStorage.getItem(`ra`)
+  var token = localStorage.getItem(`token`)
+
+
+  var objeto = {
+		"aluno": aluno,
+		"senha": senha,
+    "token": token,
+	};
+
+  $.ajax({
+   url: `https://api-academico.sumare.edu.br/api-redefinir-senha/v1/alterarSenha`,
+   type: 'POST',
+   data: JSON.stringify(objeto),
+		contentType: "application/json; charset=utf-8"
+}).done(function (data) {
+   alert(data)
+   if(data.sucess == `false`){
+      alert(data.retorno.descricao)
+   }
+   else{
+    alert("Senha Alterada com Sucesso")
+   }
+})
+
+});

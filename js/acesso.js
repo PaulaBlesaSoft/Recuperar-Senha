@@ -1,7 +1,7 @@
 // Seleciona o botão de interruptor e o campo de entrada
 const toggleButton = document.getElementById('toggleLabel');
 const myInput2 = document.getElementById('myInput2');
-const btn = document.querySelector('#');
+// const btn = document.querySelector('#');
 
 
 document.getElementById('toggle').addEventListener('change', function () {
@@ -82,6 +82,7 @@ function validarForm() {
             localStorage.setItem('value', 'RA');
             localStorage.setItem('ra', ra);
             // Redireciona para a página de recuperação de senha ou outra página
+            localStorage.setItem('aluno',ra);
             window.location.href = "/pag/recuperacaoSenha.html";
         } else {
             cpfInput.setCustomValidity("RA inválido");
