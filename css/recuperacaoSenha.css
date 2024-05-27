@@ -9,32 +9,11 @@ section {
     border: 4px solid #0084ff;
     border-radius: 24px;
     color: white;
-    width: 40vw;
+    width: 500PX;
     justify-content: center;
     padding: 40px 70px;
     box-shadow: 0px 0px 10px -5px #ccc;
 }
-
-/* .botao1{
-    width: 40vh;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: 100px;
-    padding: 100px;
-} */
-
-/* .botao a {
-    display: flex;
-}
-
-.inputC {
-    display: flex;
-    width: 40vh;
-    flex-direction: column;
-    gap: 10px;
-    color: white;
-} */
 
 span{
     font-size: 0.8rem;
@@ -46,10 +25,11 @@ span{
     gap: 20px;
 }
 
-@media(max-width:430px) {
+@media(max-width:600px) {
 
     #recuperarSenha {
-        width: 320px;
+        width: 90vw;
+        padding: 40px;
 
     }
 

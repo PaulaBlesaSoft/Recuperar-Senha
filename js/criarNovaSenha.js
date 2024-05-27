@@ -1,28 +1,31 @@
-// //Click do olinho input da tela (recuperacaoSenha)
 document.getElementById('eye1').addEventListener('click', function () {
-    var password = document.getElementById("senha");
-    if (password.type === "password") {
-        password.type = "text";
-        document.getElementById('eye1').classList.remove("fa-eye");
-        document.getElementById('eye1').classList.add("fa-eye-slash");
-    } else {
-        password.type = "password";
-        document.getElementById('eye2').classList.remove("fa-eye-slash");
-        document.getElementById('eye2').classList.add("fa-eye");
-    }
+  var password = document.getElementById("senha");
+  var eyeIcon = document.getElementById('eye1');
+  if (password.type === "password") {
+      password.type = "text";
+      eyeIcon.classList.remove("fa-eye-slash");
+      eyeIcon.classList.add("fa-eye");
+  } else {
+      password.type = "password";
+      eyeIcon.classList.remove("fa-eye");
+      eyeIcon.classList.add("fa-eye-slash");
+  }
 });
+
 document.getElementById('eye2').addEventListener('click', function () {
-    var password = document.getElementById("senhaC");
-    if (password.type === "password") {
-        password.type = "text";
-        document.getElementById('eye2').classList.remove("fa-eye");
-        document.getElementById('eye2').classList.add("fa-eye-slash");
-    } else {
-        password.type = "password";
-        document.getElementById('eye2').classList.remove("fa-eye-slash");
-        document.getElementById('eye2').classList.add("fa-eye");
-    }
+  var password = document.getElementById("senhaC");
+  var eyeIcon = document.getElementById('eye2');
+  if (password.type === "password") {
+      password.type = "text";
+      eyeIcon.classList.remove("fa-eye-slash");
+      eyeIcon.classList.add("fa-eye");
+  } else {
+      password.type = "password";
+      eyeIcon.classList.remove("fa-eye");
+      eyeIcon.classList.add("fa-eye-slash");
+  }
 });
+
 
 //validacao de senha iguais (criarNovaSenha)  
 let senha = document.getElementById('senha');

@@ -10,32 +10,33 @@
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
-        
+
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
 
 
 
     <title>Criar nova senha</title>
 </head>
+
 <body>
     <section id="criarNovaSenha">
         <h1 id="title">Criar nova senha</h1>
         <p id="text">Pediremos sua senha toda vez que fizer login.
         </p>
         <div class="form">
-            <div>
+            <div class="input-group">
                 <span class="inputC">Inserir a senha nova</span>
-                <input required="" type="password1" name="senha" id="senha" placeholder="Senha" required maxlength="6">
-                <small><i id="eye1" class="far fa-eye input-eye-icon"></i></small>
+                <input required="" type="password1" name="senha" id="senha" placeholder="Senha" required minlength="4">
+                <i id="eye1" class="fas fa-eye-slash"></i>
             </div>
-            <div>
+            <div class="input-group">
                 <span class="inputC">Insira a senha nova mais uma vez</span>
                 <input required="" type="password2" name="senhaC" id="senhaC" placeholder="Confirmar Senha" required
                     minlength="4">
-                <small><i id="eye2" class="far fa-eye input-eye-icon"></i></small>
+                <i id="eye2" class="fas fa-eye-slash"></i>
             </div>
             <div class="botao">
-                <a type="submit" id="btnCriaSenha" >Salvar</a>
+                <a type="submit" id="btnCriaSenha">Salvar</a>
             </div>
     </section>
     <div>
