@@ -16,11 +16,6 @@ function toggleInputs(inputToHideId, inputToShowId) {
     }
 }
 
-// // Função para validar o RA (7 dígitos numéricos)
-// function validarRA(ra) {
-//     return /^\d{7}$/.test(ra);
-// }
-
 function validarForm() {
     const inputToggle = document.getElementById('toggle');
     const cpfInput = document.getElementById('myInput2');
