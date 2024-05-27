@@ -1,12 +1,12 @@
 .botao{
 
-    width: 55vh;
+    width: 40vh;
     text-align: center;
     display: flex;
     flex-direction: column;
     gap: 20px;
     padding: 20px;
-    height: 80px;
+    height: 30px;
     display: inline-block;
     cursor: pointer;
 

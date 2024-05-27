@@ -12,27 +12,18 @@
 
     <title>Acesso</title>
 </head>
-
 <body>
     <section id="recuperarSenha">
         <h1 id="title">Acesso</h1>
-        <p id="text">Para recuperar sua senha, digite seu RA ou CPF e siga as instruções fornecidas.</p>
+        <p id="text">Para recuperar sua senha, digite seu RA e siga as instruções fornecidas.</p>
         <div class="inputC">
-            <div class="box">
-                <!-- butto -->
-                <input class="type-checkbox" id="toggle" type="checkbox" name="name" class="toggle-button">
-                <label class="estado" for="toggle" id="toggleLabel" textContent="">
-                    <span class="cpf">CPF</span>
-                </label>
-            </div>
-            <input class="acesso" type="text" id="myInput2" placeholder="CPF" maxlength="11">
+            <input class="acesso" type="text" id="myInput2" placeholder="RA" maxlength="7">
         </div>
         </div>
-        <div class="botao"  onclick="validarForm()">
+        <div class="botao" onclick="validarForm()">
             <a>Continua</a>
         </div>
     </section>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="./js/acesso.js"></script>
 </body>

@@ -2,8 +2,6 @@ section {
     gap: 30px;
 }
 
-
-
 #recuperarSenha {
     display: flex;
     align-items: center;
@@ -17,16 +15,16 @@ section {
     box-shadow: 0px 0px 10px -5px #ccc;
 }
 
-.botao1{
+/* .botao1{
     width: 40vh;
     text-align: center;
     display: flex;
     flex-direction: column;
     gap: 100px;
     padding: 100px;
-}
+} */
 
-.botao a {
+/* .botao a {
     display: flex;
 }
 
@@ -36,7 +34,7 @@ section {
     flex-direction: column;
     gap: 10px;
     color: white;
-}
+} */
 
 span{
     font-size: 0.8rem;

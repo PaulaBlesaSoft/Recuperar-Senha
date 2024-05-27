@@ -1,21 +1,8 @@
 'use strict'
 
-const cpf = localStorage.getItem('cpf');
 const ra = localStorage.getItem('ra')
 
-export const getAlunoCpf = async () => {
-
-    const url = `http://localhost:8080/listarContatosAluno/cpf/${cpf}`
-    console.log('URLÇ' + url);
-    const response = await fetch(url)
-    console.log('Response' + response);
-    const dado = await response.json()
-    console.log(dado);
-
-    return dado
-}
-getAlunoCpf()
-
+//GET
 export const getAlunoRa = async () => {
 
     const url = `http://localhost:8080/listarContatosAluno/aluno/${ra}`
@@ -26,6 +13,17 @@ export const getAlunoRa = async () => {
 }
 getAlunoRa()
 
+export const getVerific = async () => {
+
+    const url = `http://localhost:8080/validatoken/cpf/2375631/token/${token}`
+    const response = await fetch(url)
+    const dado = await response.json()
+
+    return dado
+}
+getAlunoRa()
+
+//POST
 export const postEmail = async (email) => {
 
     const url = `http://localhost:8080/geradortoken/enviar-token-email/${email}/${ra}`
@@ -39,7 +37,6 @@ export const postEmail = async (email) => {
 
     return dado
 }
-
 
 export const postSms = async (sms) => {
 
@@ -81,44 +78,12 @@ export const postVerificacao = async (token, cpf) => {
     return dado
 }
 
-function myFunction(p1, p2) {
-    return p1 * p2;
-  } 
-export const getVerific = async () => {
 
-    const url = `http://localhost:8080/validatoken/cpf/2375631/token/${token}`
-    const response = await fetch(url)
-    const dado = await response.json()
+// function myFunction(p1, p2) {
+//     return p1 * p2;
+//   } 
 
-    return dado
-}
-getAlunoRa()
-
-
-
-//ao clicar no botao id verific chamar essa api
-//http://localhost:8080/validatoken/cpf/2375631/token/6687
-
-// se retornar {
-//     prossegue ate a proxima tela
-// }else{
-//     alerta de erro
-// }
-
-/////////////////////////////------////////////
-
-//na tela se nova senha criarNovaSenha
-
-// ao clicar em salvar
-// chama essa api https://api-academico.sumare.edu.br/api-redefinir-senha/v1/alterarSenha
-// vamos criar um objeto assim
-// {
-//     "aluno": "2375631",
-//     "senha": "novaSenha",
-//     "token": "6687"
-// }
-
-
+//PUT
 export const putRedefinirSenha = async () => {
 
     const url = `http://localhost:8080/https://api-academico.sumare.edu.br/api-redefinir-senha/v1/alterarSenha/inserir`

@@ -15,21 +15,6 @@ section {
     box-shadow: 0px 0px 10px -5px #ccc;
 }
 
-/* .botao {
-    width: 40vh;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.botao a {
-    background-color: var(--primary-blue);
-    border-radius: 20px;
-    padding: 10px;
-
-} */
-
 .inputC {
     display: flex;
     width: 40vh;
