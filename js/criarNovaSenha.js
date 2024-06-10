@@ -60,7 +60,7 @@ $("#btnCriaSenha").click(function(){
 	};
 
   $.ajax({
-   url: `https://api-academico.sumare.edu.br/api-redefinir-senha/v1/alterarSenha`,
+   url: `http://api-academico.sumare.edu.br/api-bff-redefinir-senha/v1/alterarSenha`,
    type: 'POST',
    data: JSON.stringify(objeto),
 		contentType: "application/json; charset=utf-8"
