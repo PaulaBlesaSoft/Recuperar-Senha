@@ -1,6 +1,6 @@
 'use strict'
 
-import { getAlunoCpf, postEmail } from "./main.js"
+import { postEmail } from "./main.js"
 import { getAlunoRa } from "./main.js"
 import { postSms } from "./main.js";
 import { putRedefinirSenha } from "./main.js";

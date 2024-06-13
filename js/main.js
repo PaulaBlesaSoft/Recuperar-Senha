@@ -5,7 +5,7 @@ const ra = localStorage.getItem('ra')
 //GET
 export const getAlunoRa = async () => {
 
-    const url = `http://localhost:8080/listarContatosAluno/aluno/${ra}`
+    const url = `https://api-academico.sumare.edu.br/api-redefinir-senha/listarContatosAluno/aluno/${ra}`
     const response = await fetch(url)
     const dado = await response.json()
 
@@ -15,7 +15,7 @@ getAlunoRa()
 
 export const getVerific = async () => {
 
-    const url = `http://localhost:8080/validatoken/cpf/2375631/token/${token}`
+    const url = `https://api-academico.sumare.edu.br/api-redefinir-senha/validatoken/cpf/2375631/token/${token}`
     const response = await fetch(url)
     const dado = await response.json()
 
@@ -26,7 +26,7 @@ getAlunoRa()
 //POST
 export const postEmail = async (email) => {
 
-    const url = `http://localhost:8080/geradortoken/enviar-token-email/${email}/${ra}`
+    const url = `https://api-academico.sumare.edu.br/api-redefinir-senha/geradortoken/enviar-token-email/${email}/${ra}`
     const response = await fetch(url, {
         method: "POST",
         headers: {
@@ -40,7 +40,7 @@ export const postEmail = async (email) => {
 
 export const postSms = async (sms) => {
 
-    const url = `http://localhost:8080/geradortoken/enviar-token-sms/${sms}/${ra}` //2375631 tem que ser variavel aluno
+    const url = `https://api-academico.sumare.edu.br/api-redefinir-senha/geradortoken/enviar-token-sms/${sms}/${ra}` //2375631 tem que ser variavel aluno
     const response = await fetch(url, {
         method: "POST",
         headers: {
@@ -58,7 +58,7 @@ export const postSms = async (sms) => {
 
 export const postVerificacao = async (token, cpf) => {
 
-    const url = `http://localhost:8080/validatoken/inserir`
+    const url = `https://api-academico.sumare.edu.br/api-redefinir-senha/validatoken/inserir`
     const response = await fetch(url, {
         method: "POST",
         headers: {
@@ -86,7 +86,7 @@ export const postVerificacao = async (token, cpf) => {
 //PUT
 export const putRedefinirSenha = async () => {
 
-    const url = `http://localhost:8080/https://api-academico.sumare.edu.br/api-redefinir-senha/v1/alterarSenha/inserir`
+    const url = `https://api-academico.sumare.edu.br/api-redefinir-senha/v1/alterarSenha/inserir`
     const response = await fetch(url, {
         method: "PUT",
         headers: {

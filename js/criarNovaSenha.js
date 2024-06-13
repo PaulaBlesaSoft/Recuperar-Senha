@@ -65,12 +65,12 @@ $("#btnCriaSenha").click(function(){
    data: JSON.stringify(objeto),
 		contentType: "application/json; charset=utf-8"
 }).done(function (data) {
-   alert(data)
    if(data.sucess == `false`){
-      alert(data.retorno.descricao)
+    // abre modal de erro, tente  novamente mais tarde
    }
    else{
-    alert("Senha Alterada com Sucesso")
+   // alert("Senha Alterada com Sucesso");
+    window.location.href = "/pag/senhaAlterada.html";
    }
 })
 

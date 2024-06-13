@@ -19,14 +19,14 @@ function toggleInputs(inputToHideId, inputToShowId) {
 function validarForm() {
     const inputToggle = document.getElementById('toggle');
     const cpfInput = document.getElementById('myInput2');
-    const valorToggle = inputToggle.checked;
+   
 
     // Verifica se o campo está configurado como "RA"
-    if (valorToggle) {
+   
         // Realiza a validação do RA
         const ra = cpfInput.value;
-        const raValido = validarRA(ra);
-        if (raValido) {
+        //const raValido = validarRA(ra);
+        if (ra) {
             // Armazena o RA no localStorage
             localStorage.setItem('value', 'RA');
             localStorage.setItem('ra', ra);
@@ -37,5 +37,5 @@ function validarForm() {
             cpfInput.setCustomValidity("RA inválido");
             cpfInput.reportValidity();
         }
-    }
+    
 }
