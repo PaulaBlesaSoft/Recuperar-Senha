@@ -22,66 +22,60 @@ export const getVerific = async () => {
     return dado
 }
 getAlunoRa()
-
-//POST
+// POST
 export const postEmail = async (email) => {
+  const url = `https://api-academico.sumare.edu.br/api-redefinir-senha/geradortoken/enviar-token-email/${email}/${ra}`;
 
-    const url = `https://api-academico.sumare.edu.br/api-redefinir-senha/geradortoken/enviar-token-email/${email}/${ra}`
-    const response = await fetch(url, {
-        method: "POST",
-        headers: {
-            "Content-type": "application/json; charset=UTF-8"
-        }
-    })
-    const dado = await response.json()
+  const response = await fetch(url, {
+    method: "POST",
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
+  });
 
-    return dado
-}
+  const dado = await response.text(); // Use .text() ao invés de .json()
+  return dado;
+};
 
 export const postSms = async (sms) => {
+  const url = `https://api-academico.sumare.edu.br/api-redefinir-senha/geradortoken/enviar-token-sms/${sms}/${ra}`;
 
-    const url = `https://api-academico.sumare.edu.br/api-redefinir-senha/geradortoken/enviar-token-sms/${sms}/${ra}` //2375631 tem que ser variavel aluno
-    const response = await fetch(url, {
-        method: "POST",
-        headers: {
-            "Accept": "*/*",
-            "Accept-Encoding": "gzip,deflate,br",
-            "Connection": "keep-alive",
-            "auth-key": "c5fa8cf8-9e36-4313-8a2d-9e7c7cb01969 ",
-            "Content-type": "application/json; charset=UTF-8",
-        }
-    })
-    const dado = await response.json()
+  const response = await fetch(url, {
+    method: "POST",
+    headers: {
+      "Accept": "*/*",
+      "Accept-Encoding": "gzip,deflate,br",
+      "Connection": "keep-alive",
+      "auth-key": "c5fa8cf8-9e36-4313-8a2d-9e7c7cb01969 ",
+      "Content-type": "application/json; charset=UTF-8",
+    },
+  });
 
-    return dado
-}
+  const dado = await response.text(); // Use .text() ao invés de .json()
+  return dado;
+};
+export const postVerificacao = (token, cpf) => {
+  const url = `https://api-academico.sumare.edu.br/api-redefinir-senha/validatoken/inserir`;
 
-export const postVerificacao = async (token, cpf) => {
+  const response = fetch(url, {
+    method: "POST",
+    headers: {
+      "Accept": "*/*",
+      "Accept-Encoding": "gzip,deflate,br",
+      "Connection": "keep-alive",
+      "auth-key": "c5fa8cf8-9e36-4313-8a2d-9e7c7cb01969 ",
+      "Content-type": "application/json; charset=UTF-8",
+    },
+    body: JSON.stringify({
+      token: token,
+      cpf: cpf,
+    }),
+  });
 
-    const url = `https://api-academico.sumare.edu.br/api-redefinir-senha/validatoken/inserir`
-    const response = await fetch(url, {
-        method: "POST",
-        headers: {
-            "Accept": "*/*",
-            "Accept-Encoding": "gzip,deflate,br",
-            "Connection": "keep-alive",
-            "auth-key": "c5fa8cf8-9e36-4313-8a2d-9e7c7cb01969 ",
-            "Content-type": "application/json; charset=UTF-8",
-        },
-        body: {
-            "token": token,
-            "cpf": cpf
-        }
-    })
-    const dado = await response.json()
+  const dado = response.then((res) => res.json());
 
-    return dado
-}
-
-
-// function myFunction(p1, p2) {
-//     return p1 * p2;
-//   } 
+  return dado;
+};
 
 //PUT
 export const putRedefinirSenha = async () => {

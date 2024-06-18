@@ -20,17 +20,19 @@ const criarCard = (aluno) => {
 
     console.log('teset');
 
-    card.addEventListener(`click`, async () => {
-        if (aluno[1].toUpperCase() == 'SMS') {
-            postSms(aluno[0])
-            window.location.href = '../pag/verificacao.html'
-
+   card.addEventListener('click', async () => {
+    try {
+        if (aluno[1].toUpperCase() === 'SMS') {
+            await postSms(aluno[0]);
         } else {
-            postEmail(aluno[0])
-            window.location.href = '../pag/verificacao.html'
+            await postEmail(aluno[0]);
         }
-    })
-
+        window.location.href = '../pag/verificacao.html';
+    } catch (error) {
+        console.error('Erro ao enviar a requisição:', error);
+        // Aqui você pode adicionar algum tratamento de erro, se necessário
+    }
+});
     card.append(a);
 
     return card;

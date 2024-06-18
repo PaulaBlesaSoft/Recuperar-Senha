@@ -21,6 +21,12 @@
     -o-transition: all .3s ease-in-out;
     transition: all .4s ease-in-out;
     background: transparent!important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
 }
 
 

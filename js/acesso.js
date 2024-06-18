@@ -32,7 +32,7 @@ function validarForm() {
             localStorage.setItem('ra', ra);
             // Redireciona para a página de recuperação de senha ou outra página
             localStorage.setItem('aluno',ra);
-            window.location.href = "/pag/recuperacaoSenha.html";
+            window.location.href = "pag/recuperacaoSenha.html";
         } else {
             cpfInput.setCustomValidity("RA inválido");
             cpfInput.reportValidity();

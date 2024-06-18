@@ -2,13 +2,13 @@ document.getElementById('eye1').addEventListener('click', function () {
   var password = document.getElementById("senha");
   var eyeIcon = document.getElementById('eye1');
   if (password.type === "password") {
-      password.type = "text";
-      eyeIcon.classList.remove("fa-eye-slash");
-      eyeIcon.classList.add("fa-eye");
+    password.type = "text";
+    eyeIcon.classList.remove("fa-eye-slash");
+    eyeIcon.classList.add("fa-eye");
   } else {
-      password.type = "password";
-      eyeIcon.classList.remove("fa-eye");
-      eyeIcon.classList.add("fa-eye-slash");
+    password.type = "password";
+    eyeIcon.classList.remove("fa-eye");
+    eyeIcon.classList.add("fa-eye-slash");
   }
 });
 
@@ -16,13 +16,13 @@ document.getElementById('eye2').addEventListener('click', function () {
   var password = document.getElementById("senhaC");
   var eyeIcon = document.getElementById('eye2');
   if (password.type === "password") {
-      password.type = "text";
-      eyeIcon.classList.remove("fa-eye-slash");
-      eyeIcon.classList.add("fa-eye");
+    password.type = "text";
+    eyeIcon.classList.remove("fa-eye-slash");
+    eyeIcon.classList.add("fa-eye");
   } else {
-      password.type = "password";
-      eyeIcon.classList.remove("fa-eye");
-      eyeIcon.classList.add("fa-eye-slash");
+    password.type = "password";
+    eyeIcon.classList.remove("fa-eye");
+    eyeIcon.classList.add("fa-eye-slash");
   }
 });
 
@@ -45,8 +45,10 @@ function validarSenha() {
 senhaC.addEventListener('input', validarSenha);
 
 
+$("#alteraSenha2").submit(function (e) {
+  e.preventDefault();
 
-$("#btnCriaSenha").click(function(){
+  //$("#btnCriaSenha").click(function(){
 
   var senha = $("#senhaC").val();
   var aluno = localStorage.getItem(`ra`)
@@ -54,24 +56,24 @@ $("#btnCriaSenha").click(function(){
 
 
   var objeto = {
-		"aluno": aluno,
-		"senha": senha,
+    "aluno": aluno,
+    "senha": senha,
     "token": token,
-	};
+  };
 
   $.ajax({
-   url: `http://api-academico.sumare.edu.br/api-bff-redefinir-senha/v1/alterarSenha`,
-   type: 'POST',
-   data: JSON.stringify(objeto),
-		contentType: "application/json; charset=utf-8"
-}).done(function (data) {
-   if(data.sucess == `false`){
-    // abre modal de erro, tente  novamente mais tarde
-   }
-   else{
-   // alert("Senha Alterada com Sucesso");
-    window.location.href = "/pag/senhaAlterada.html";
-   }
-})
+    url: `https://api-academico.sumare.edu.br/api-bff-redefinir-senha/v1/alterarSenha`,
+    type: 'POST',
+    data: JSON.stringify(objeto),
+    contentType: "application/json; charset=utf-8"
+  }).done(function (data) {
+    if (data.sucess == `false`) {
+      // abre modal de erro, tente  novamente mais tarde
+    }
+    else {
+      // alert("Senha Alterada com Sucesso");
+      window.location.href = "../pag/senhaAlterada.html";
+    }
+  })
 
 });

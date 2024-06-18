@@ -5,7 +5,7 @@ $("#verific").click(function(){
     var aluno = localStorage.getItem(`ra`)
 
        $.ajax({
-        url: "https://api-academico.sumare.edu.br/api-redefinir-senha/validatoken/cpf/"+aluno+"/token/"+$('#token').val(),
+        url: "https://api-academico.sumare.edu.br/api-redefinir-senha/validatoken/aluno/"+aluno+"/token/"+$('#token').val(),
         type: "get"
     }).done(function (data) {
         if(data == `S`){

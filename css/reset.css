@@ -10,7 +10,7 @@ a, ul,li{
     list-style: none;
 }
 body{
-    background-image: url(/img/back.png);
+    background-image: url(../img/back.png);
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
