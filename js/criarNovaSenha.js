@@ -41,39 +41,42 @@ function validarSenha() {
     return true;
   }
 }
-// verificar também quando o campo for modificado, para que a mensagem suma quando as senhas forem iguais
-senhaC.addEventListener('input', validarSenha);
-
 
 $("#alteraSenha2").submit(function (e) {
   e.preventDefault();
+  $('.bg-loading').fadeIn();
 
-  //$("#btnCriaSenha").click(function(){
+  if(validarSenha()){
 
-  var senha = $("#senhaC").val();
-  var aluno = localStorage.getItem(`ra`)
-  var token = localStorage.getItem(`token`)
+    var senha = $("#senhaC").val();
+    var aluno = localStorage.getItem(`ra`)
+    var token = localStorage.getItem(`token`)
+  
+  
+    var objeto = {
+      "aluno": aluno,
+      "senha": senha,
+      "token": token,
+    };
+  
+    $.ajax({
+      url: `https://api-academico.sumare.edu.br/api-bff-redefinir-senha/v1/alterarSenha`,
+      type: 'POST',
+      data: JSON.stringify(objeto),
+      contentType: "application/json; charset=utf-8"
+    }).done(function (data) {
+      if (data.sucess == `false`) {
+        $('.bg-loading').fadeOut();
+        // abre modal de erro, tente  novamente mais tarde
+      }
+      else {
+        // alert("Senha Alterada com Sucesso");
+        window.location.href = "../pag/senhaAlterada.html";
+      }
+    })
 
-
-  var objeto = {
-    "aluno": aluno,
-    "senha": senha,
-    "token": token,
-  };
-
-  $.ajax({
-    url: `https://api-academico.sumare.edu.br/api-bff-redefinir-senha/v1/alterarSenha`,
-    type: 'POST',
-    data: JSON.stringify(objeto),
-    contentType: "application/json; charset=utf-8"
-  }).done(function (data) {
-    if (data.sucess == `false`) {
-      // abre modal de erro, tente  novamente mais tarde
-    }
-    else {
-      // alert("Senha Alterada com Sucesso");
-      window.location.href = "../pag/senhaAlterada.html";
-    }
-  })
+  }else{
+    $('.bg-loading').fadeOut();
+  }
 
 });

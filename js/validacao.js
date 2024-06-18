@@ -2,6 +2,8 @@
 
 $("#verific").click(function(){
 
+    $('.bg-loading').fadeIn();
+
     var aluno = localStorage.getItem(`ra`)
 
        $.ajax({
@@ -13,6 +15,7 @@ $("#verific").click(function(){
             window.location.href="criarNovaSenha.html";
         }
         else{
+            $('.bg-loading').fadeOut();
         }
     })
 

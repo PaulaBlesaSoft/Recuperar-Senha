@@ -21,6 +21,7 @@ const criarCard = (aluno) => {
     console.log('teset');
 
    card.addEventListener('click', async () => {
+    $('.bg-loading').fadeIn();
     try {
         if (aluno[1].toUpperCase() === 'SMS') {
             await postSms(aluno[0]);
@@ -92,7 +93,9 @@ if (inputElementReset) {
     });
 }
 
-
+$(document).ready(function() { 
+	$('.bg-loading').fadeOut();
+});
 
 
 
