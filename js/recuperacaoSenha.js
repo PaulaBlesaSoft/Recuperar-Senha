@@ -16,7 +16,7 @@ const criarCard = (aluno) => {
 
     const a = document.createElement('a')
     // a.href = '../pag/verificacao.html';
-    a.text = `${aluno[1]} ${aluno[0]}`
+    a.text = `${aluno[1]}: ${aluno[0]}`
 
     console.log('teset');
 
@@ -29,8 +29,8 @@ const criarCard = (aluno) => {
         }
         window.location.href = '../pag/verificacao.html';
     } catch (error) {
-        console.error('Erro ao enviar a requisição:', error);
-        // Aqui você pode adicionar algum tratamento de erro, se necessário
+        console.error('Erro ao enviar a requisiï¿½ï¿½o:', error);
+        // Aqui vocï¿½ pode adicionar algum tratamento de erro, se necessï¿½rio
     }
 });
     card.append(a);
