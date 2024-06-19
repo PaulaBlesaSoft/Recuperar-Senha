@@ -37,5 +37,4 @@ function validarForm() {
             cpfInput.setCustomValidity("RA inválido");
             cpfInput.reportValidity();
         }
-    
 }

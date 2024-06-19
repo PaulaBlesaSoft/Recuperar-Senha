@@ -2,6 +2,7 @@ section {
     gap: 30px;
 }
 
+
 .text {
     font-size: 0.8rem;
     color: #1c72c2;
@@ -55,10 +56,15 @@ input {
     #verificacaoNecessaria {
         width: 90vw;
         padding: 40px;
+    
     }
 
     #title {
-        font-size: 1.70rem;
+        font-size: 1.60rem;
+    }
+
+    #titleS {
+        font-size: 1.60rem;
     }
 
     .botao {
@@ -74,6 +80,45 @@ input {
         font-size: 1rem;
         flex-direction: column;
         gap: 10px;
+    }
+
+}
+
+@media(max-width: 414px) {
+
+    #titleS {
+        font-size: 1.30rem;
+    }
+}
+
+
+@media(max-width: 390px) {
+
+    #title {
+        font-size: 1.50rem;
+    }
+
+    #titleS {
+        font-size: 1.20rem;
+    }
+}
+
+@media(max-width: 375px) {
+
+    #title {
+        font-size: 1.50rem;
+    }
+
+    
+    #titleS {
+        font-size: 1.10rem;
+    }
+}
+
+@media(max-width: 360px) {
+
+    #title {
+        font-size: 1.45rem;
     }
 
 }

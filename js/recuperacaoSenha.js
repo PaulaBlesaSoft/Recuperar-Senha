@@ -98,5 +98,12 @@ $(document).ready(function() {
 });
 
 
+document.getElementById('linkAtendimento').addEventListener('click', function(event) {
+    event.preventDefault();
+    window.open('https://sumare.edu.br/atendimento/', '_blank');
+});
+
+
+
 
 

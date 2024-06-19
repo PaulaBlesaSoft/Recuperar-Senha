@@ -110,3 +110,36 @@ span{
     }
 
 }
+
+
+@media(max-width: 360px) {
+
+  #recuperarSenha {
+      width: 90vw;
+      padding: 40px;
+
+  }
+
+  #title {
+      font-size: 1.40rem;
+      background-color: red;
+  }
+
+  #text{
+      font-size: .9rem;
+      text-align: start;
+
+  }
+
+  .botao {
+      width: 70vw;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+  }
+  .botao a {
+      font-size: 0.7rem;
+  }
+
+}
