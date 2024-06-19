@@ -34,7 +34,9 @@ buttonVerificaToken.addEventListener('click', function(event) {
         console.log("Token inválido. Ação não executada.");
     }
 });
+  token.addEventListener('input', validarToken);
 
+  
 $("#verific").click(function(){
 
     $('.bg-loading').fadeIn();
