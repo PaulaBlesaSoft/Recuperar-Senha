@@ -80,3 +80,6 @@ $("#alteraSenha2").submit(function (e) {
   }
 
 });
+
+// Adiciona ouvintes de evento para validar as senhas ao digitar
+senhaC.addEventListener('input', validarSenha);
