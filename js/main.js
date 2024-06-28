@@ -2,7 +2,7 @@
 
 const ra = localStorage.getItem('ra')
 
-//GET
+//GEET
 export const getAlunoRa = async () => {
 
     const url = `https://api-academico.sumare.edu.br/api-redefinir-senha/listarContatosAluno/aluno/${ra}`
@@ -33,7 +33,7 @@ export const postEmail = async (email) => {
     },
   });
 
-  const dado = await response.text(); // Use .text() ao invés de .json()
+  const dado = await response.text(); // Use .text() ao invï¿½s de .json()
   return dado;
 };
 
@@ -51,7 +51,7 @@ export const postSms = async (sms) => {
     },
   });
 
-  const dado = await response.text(); // Use .text() ao invés de .json()
+  const dado = await response.text(); // Use .text() ao invï¿½s de .json()
   return dado;
 };
 export const postVerificacao = (token, cpf) => {
